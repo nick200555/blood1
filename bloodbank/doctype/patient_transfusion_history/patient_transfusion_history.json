@@ -1,0 +1,28 @@
+{
+  "doctype": "DocType",
+  "name": "Patient Transfusion History",
+  "module": "Bloodbank",
+  "istable": 1,
+  "fields": [
+    {
+      "fieldname": "transfusion",
+      "label": "Transfusion",
+      "fieldtype": "Link",
+      "options": "Transfusion",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "date",
+      "label": "Date",
+      "fieldtype": "Date",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "blood_unit",
+      "label": "Blood Unit",
+      "fieldtype": "Link",
+      "options": "Blood Unit",
+      "in_list_view": 1
+    }
+  ]
+}

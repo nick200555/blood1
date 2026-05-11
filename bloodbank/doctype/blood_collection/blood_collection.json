@@ -1,0 +1,212 @@
+{
+  "doctype": "DocType",
+  "name": "Blood Collection",
+  "module": "Bloodbank",
+  "autoname": "format:BC-{YY}-{MM}-{####}",
+  "creation": "2025-01-01 00:00:00.000000",
+  "modified": "2025-01-01 00:00:00.000000",
+  "version": 2,
+  "issingle": 0,
+  "istable": 0,
+  "engine": "InnoDB",
+  "track_changes": 1,
+  "is_submittable": 1,
+  "allow_import": 1,
+  "fields": [
+    {
+      "fieldname": "collection_id",
+      "label": "Collection ID",
+      "fieldtype": "Data",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "donor_info",
+      "label": "Donor Information",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "donor",
+      "label": "Donor",
+      "fieldtype": "Link",
+      "options": "Donor",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "donor_name",
+      "label": "Donor Name",
+      "fieldtype": "Data",
+      "fetch_from": "donor.full_name",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "blood_group",
+      "label": "Blood Group",
+      "fieldtype": "Link",
+      "options": "Blood Group",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "column_break_1",
+      "label": "",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "collection_date",
+      "label": "Collection Date",
+      "fieldtype": "Date",
+      "default": "Today",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "collection_time",
+      "label": "Collection Time",
+      "fieldtype": "Time",
+      "reqd": 1
+    },
+    {
+      "fieldname": "appointment",
+      "label": "Appointment",
+      "fieldtype": "Link",
+      "options": "Donor Appointment"
+    },
+    {
+      "fieldname": "health_screening",
+      "label": "Health Screening",
+      "fieldtype": "Link",
+      "options": "Donor Health Screening"
+    },
+    {
+      "fieldname": "collection_details",
+      "label": "Collection Details",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "collection_method",
+      "label": "Collection Method",
+      "fieldtype": "Select",
+      "options": "Whole Blood\nApheresis-Platelets\nApheresis-Plasma\nApheresis-RBC\nApheresis-Double RBC",
+      "default": "Whole Blood",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "volume_collected_ml",
+      "label": "Volume Collected (mL)",
+      "fieldtype": "Float",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "blood_bag_number",
+      "label": "Blood Bag Number",
+      "fieldtype": "Data",
+      "reqd": 1,
+      "unique": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "column_break_2",
+      "label": "",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "donation_site",
+      "label": "Donation Site",
+      "fieldtype": "Link",
+      "options": "Donation Site",
+      "reqd": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "branch",
+      "label": "Branch",
+      "fieldtype": "Link",
+      "options": "Blood Bank Branch",
+      "reqd": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "phlebotomist",
+      "label": "Phlebotomist",
+      "fieldtype": "Link",
+      "options": "User",
+      "reqd": 1
+    },
+    {
+      "fieldname": "processing_info",
+      "label": "Processing & Status",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "status",
+      "label": "Status",
+      "fieldtype": "Select",
+      "options": "Collected\nProcessing\nTested\nApproved\nRejected\nDiscarded",
+      "default": "Collected",
+      "read_only": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "had_adverse_event",
+      "label": "Had Adverse Event",
+      "fieldtype": "Check",
+      "default": 0
+    },
+    {
+      "fieldname": "adverse_event_details",
+      "label": "Adverse Event Details",
+      "fieldtype": "Small Text",
+      "depends_on": "eval:doc.had_adverse_event==1"
+    },
+    {
+      "fieldname": "notes",
+      "label": "Notes",
+      "fieldtype": "Text"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 1,
+      "cancel": 1
+    },
+    {
+      "role": "Blood Bank Manager",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "submit": 1,
+      "cancel": 1
+    },
+    {
+      "role": "Blood Bank Technician",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "submit": 1,
+      "cancel": 0
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "naming_rule": "Expression",
+  "title_field": "blood_bag_number",
+  "search_fields": "donor_name,blood_bag_number,donor"
+}

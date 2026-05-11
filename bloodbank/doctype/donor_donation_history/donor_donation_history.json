@@ -1,0 +1,34 @@
+{
+  "doctype": "DocType",
+  "name": "Donor Donation History",
+  "module": "Bloodbank",
+  "istable": 1,
+  "fields": [
+    {
+      "fieldname": "collection",
+      "label": "Collection",
+      "fieldtype": "Link",
+      "options": "Blood Collection",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "date",
+      "label": "Date",
+      "fieldtype": "Date",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "blood_group",
+      "label": "Blood Group",
+      "fieldtype": "Link",
+      "options": "Blood Group",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "volume",
+      "label": "Volume (mL)",
+      "fieldtype": "Float",
+      "in_list_view": 1
+    }
+  ]
+}

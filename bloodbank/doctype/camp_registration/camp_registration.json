@@ -1,0 +1,80 @@
+{
+  "doctype": "DocType",
+  "name": "Camp Registration",
+  "module": "Bloodbank",
+  "autoname": "format:REG-{YY}-{####}",
+  "creation": "2025-01-01 00:00:00.000000",
+  "modified": "2025-01-01 00:00:00.000000",
+  "version": 2,
+  "issingle": 0,
+  "istable": 0,
+  "engine": "InnoDB",
+  "fields": [
+    {
+      "fieldname": "registration_id",
+      "label": "Registration ID",
+      "fieldtype": "Data",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "blood_camp",
+      "label": "Blood Camp",
+      "fieldtype": "Link",
+      "options": "Blood Camp",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "donor",
+      "label": "Donor",
+      "fieldtype": "Link",
+      "options": "Donor",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "donor_name",
+      "label": "Donor Name",
+      "fieldtype": "Data",
+      "fetch_from": "donor.full_name",
+      "read_only": 1
+    },
+    {
+      "fieldname": "registration_date",
+      "label": "Registration Date",
+      "fieldtype": "Date",
+      "default": "Today",
+      "read_only": 1
+    },
+    {
+      "fieldname": "attended",
+      "label": "Attended",
+      "fieldtype": "Check",
+      "default": 0,
+      "in_list_view": 1
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    },
+    {
+      "role": "Blood Donor Coordinator",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "naming_rule": "Expression",
+  "title_field": "donor_name"
+}

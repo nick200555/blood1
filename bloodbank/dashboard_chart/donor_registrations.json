@@ -1,0 +1,10 @@
+{
+  "doctype": "Dashboard Chart",
+  "chart_name": "Donor Registrations",
+  "chart_type": "Line",
+  "document_type": "Donor",
+  "group_by_type": "Count",
+  "time_interval": "Monthly",
+  "based_on": "registration_date",
+  "is_public": 1
+}

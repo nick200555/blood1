@@ -1,0 +1,178 @@
+{
+  "doctype": "DocType",
+  "name": "Blood Inventory",
+  "module": "Bloodbank",
+  "autoname": "format:{branch}-{blood_group}-{component_type}",
+  "creation": "2025-01-01 00:00:00.000000",
+  "modified": "2025-01-01 00:00:00.000000",
+  "version": 2,
+  "issingle": 0,
+  "istable": 0,
+  "engine": "InnoDB",
+  "track_changes": 1,
+  "fields": [
+    {
+      "fieldname": "inventory_id",
+      "label": "Inventory ID",
+      "fieldtype": "Data",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "item_info",
+      "label": "Item Information",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "branch",
+      "label": "Branch",
+      "fieldtype": "Link",
+      "options": "Blood Bank Branch",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "blood_group",
+      "label": "Blood Group",
+      "fieldtype": "Link",
+      "options": "Blood Group",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "component_type",
+      "label": "Component Type",
+      "fieldtype": "Link",
+      "options": "Blood Component Type",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "column_break_1",
+      "label": "",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "total_units",
+      "label": "Total Units",
+      "fieldtype": "Int",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "available_units",
+      "label": "Available Units",
+      "fieldtype": "Int",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "reserved_units",
+      "label": "Reserved Units",
+      "fieldtype": "Int",
+      "read_only": 1
+    },
+    {
+      "fieldname": "expired_units",
+      "label": "Expired Units",
+      "fieldtype": "Int",
+      "read_only": 1
+    },
+    {
+      "fieldname": "discarded_units",
+      "label": "Discarded Units",
+      "fieldtype": "Int",
+      "read_only": 1
+    },
+    {
+      "fieldname": "thresholds",
+      "label": "Stock Thresholds",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "minimum_stock",
+      "label": "Minimum Stock Level",
+      "fieldtype": "Int",
+      "default": 10
+    },
+    {
+      "fieldname": "critical_stock",
+      "label": "Critical Stock Level",
+      "fieldtype": "Int",
+      "default": 5
+    },
+    {
+      "fieldname": "maximum_stock",
+      "label": "Maximum Stock Level",
+      "fieldtype": "Int",
+      "default": 50
+    },
+    {
+      "fieldname": "column_break_thresh",
+      "label": "",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "reorder_level",
+      "label": "Reorder Level",
+      "fieldtype": "Int",
+      "default": 15
+    },
+    {
+      "fieldname": "last_updated",
+      "label": "Last Updated",
+      "fieldtype": "Datetime",
+      "read_only": 1
+    },
+    {
+      "fieldname": "stock_status",
+      "label": "Stock Status",
+      "fieldtype": "Select",
+      "options": "Normal\nLow\nCritical\nExcess",
+      "default": "Normal",
+      "read_only": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "units_list",
+      "label": "Units",
+      "fieldtype": "Table",
+      "options": "Inventory Blood Unit",
+      "read_only": 1
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    },
+    {
+      "role": "Blood Bank Manager",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0
+    },
+    {
+      "role": "Blood Bank Technician",
+      "permlevel": 0,
+      "read": 1,
+      "write": 0,
+      "create": 0,
+      "delete": 0
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "naming_rule": "Expression",
+  "title_field": "inventory_id"
+}

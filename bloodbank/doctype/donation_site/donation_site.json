@@ -1,0 +1,75 @@
+{
+  "doctype": "DocType",
+  "name": "Donation Site",
+  "module": "Bloodbank",
+  "autoname": "field:site_name",
+  "creation": "2025-01-01 00:00:00.000000",
+  "modified": "2025-01-01 00:00:00.000000",
+  "version": 2,
+  "issingle": 0,
+  "istable": 0,
+  "engine": "InnoDB",
+  "fields": [
+    {
+      "fieldname": "site_name",
+      "label": "Site Name",
+      "fieldtype": "Data",
+      "reqd": 1,
+      "unique": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "site_type",
+      "label": "Site Type",
+      "fieldtype": "Select",
+      "options": "Fixed Center\nMobile Bus\nTemporary Camp\nHealthcare Facility",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "branch",
+      "label": "Responsible Branch",
+      "fieldtype": "Link",
+      "options": "Blood Bank Branch",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "address",
+      "label": "Address",
+      "fieldtype": "Small Text"
+    },
+    {
+      "fieldname": "city",
+      "label": "City",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "is_active",
+      "label": "Is Active",
+      "fieldtype": "Check",
+      "default": 1
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    },
+    {
+      "role": "Blood Bank Manager",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "title_field": "site_name"
+}

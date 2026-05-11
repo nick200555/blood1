@@ -1,0 +1,27 @@
+{
+  "doctype": "DocType",
+  "name": "Blood Request Fulfillment",
+  "module": "Bloodbank",
+  "istable": 1,
+  "fields": [
+    {
+      "fieldname": "blood_issue",
+      "label": "Blood Issue",
+      "fieldtype": "Link",
+      "options": "Blood Issue",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "units_count",
+      "label": "Units Count",
+      "fieldtype": "Int",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "date",
+      "label": "Date",
+      "fieldtype": "Date",
+      "in_list_view": 1
+    }
+  ]
+}

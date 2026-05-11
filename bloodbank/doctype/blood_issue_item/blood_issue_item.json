@@ -1,0 +1,54 @@
+{
+  "doctype": "DocType",
+  "name": "Blood Issue Item",
+  "module": "Bloodbank",
+  "istable": 1,
+  "fields": [
+    {
+      "fieldname": "blood_unit",
+      "label": "Blood Unit",
+      "fieldtype": "Link",
+      "options": "Blood Unit",
+      "in_list_view": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "blood_group",
+      "label": "Blood Group",
+      "fieldtype": "Link",
+      "options": "Blood Group",
+      "fetch_from": "blood_unit.blood_group",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "component_type",
+      "label": "Component",
+      "fieldtype": "Link",
+      "options": "Blood Component Type",
+      "fetch_from": "blood_unit.component_type",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "volume",
+      "label": "Volume (mL)",
+      "fieldtype": "Float",
+      "fetch_from": "blood_unit.volume_ml",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "price",
+      "label": "Price/Unit",
+      "fieldtype": "Currency",
+      "default": 0
+    },
+    {
+      "fieldname": "amount",
+      "label": "Amount",
+      "fieldtype": "Currency",
+      "read_only": 1
+    }
+  ]
+}

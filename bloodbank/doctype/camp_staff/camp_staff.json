@@ -1,0 +1,27 @@
+{
+  "doctype": "DocType",
+  "name": "Camp Staff",
+  "module": "Bloodbank",
+  "istable": 1,
+  "fields": [
+    {
+      "fieldname": "user",
+      "label": "User",
+      "fieldtype": "Link",
+      "options": "User",
+      "in_list_view": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "role",
+      "label": "Role at Camp",
+      "fieldtype": "Data",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "contact",
+      "label": "Contact Info",
+      "fieldtype": "Data"
+    }
+  ]
+}

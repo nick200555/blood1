@@ -1,0 +1,15 @@
+{
+  "doctype": "Notification",
+  "name": "Donor Welcome",
+  "document_type": "Donor",
+  "event": "New",
+  "channel": "Email",
+  "subject": "Welcome to BloodBank - Registration Confirmed",
+  "message": "<p>Dear {{ doc.full_name }},</p><p>Thank you for registering as a blood donor. Your Donor ID is: <b>{{ doc.name }}</b></p><p>Blood Group: {{ doc.blood_group }}</p><p>You will receive notifications when your blood type is needed.</p>",
+  "condition": "doc.receive_email == 1",
+  "recipients": [
+    {
+      "receiver_by_document_field": "email"
+    }
+  ]
+}

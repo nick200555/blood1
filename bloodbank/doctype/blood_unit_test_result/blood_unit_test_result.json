@@ -1,0 +1,34 @@
+{
+  "doctype": "DocType",
+  "name": "Blood Unit Test Result",
+  "module": "Bloodbank",
+  "istable": 1,
+  "fields": [
+    {
+      "fieldname": "test",
+      "label": "Test",
+      "fieldtype": "Link",
+      "options": "Blood Test Result",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "test_date",
+      "label": "Test Date",
+      "fieldtype": "Date",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "result",
+      "label": "Result",
+      "fieldtype": "Data",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "tested_by",
+      "label": "Tested By",
+      "fieldtype": "Link",
+      "options": "User",
+      "in_list_view": 1
+    }
+  ]
+}

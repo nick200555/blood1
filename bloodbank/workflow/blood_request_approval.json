@@ -1,0 +1,55 @@
+{
+  "doctype": "Workflow",
+  "workflow_name": "Blood Request Approval",
+  "document_type": "Blood Request",
+  "is_active": 1,
+  "states": [
+    {
+      "state": "Draft",
+      "doc_status": 0,
+      "allow_edit": "Blood Bank Receptionist"
+    },
+    {
+      "state": "Under Review",
+      "doc_status": 0,
+      "allow_edit": "Blood Bank Technician"
+    },
+    {
+      "state": "Approved",
+      "doc_status": 0,
+      "allow_edit": "Blood Bank Manager"
+    },
+    {
+      "state": "Rejected",
+      "doc_status": 0,
+      "allow_edit": "Blood Bank Manager",
+      "is_terminal": 1
+    },
+    {
+      "state": "Fulfilled",
+      "doc_status": 1,
+      "allow_edit": "Blood Bank Manager",
+      "is_terminal": 1
+    }
+  ],
+  "transitions": [
+    {
+      "state": "Draft",
+      "action": "Submit for Review",
+      "next_state": "Under Review",
+      "allowed": "Blood Bank Receptionist"
+    },
+    {
+      "state": "Under Review",
+      "action": "Approve",
+      "next_state": "Approved",
+      "allowed": "Blood Bank Manager"
+    },
+    {
+      "state": "Under Review",
+      "action": "Reject",
+      "next_state": "Rejected",
+      "allowed": "Blood Bank Manager"
+    }
+  ]
+}

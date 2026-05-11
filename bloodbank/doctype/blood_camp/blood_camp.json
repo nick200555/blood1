@@ -1,0 +1,159 @@
+{
+  "doctype": "DocType",
+  "name": "Blood Camp",
+  "module": "Bloodbank",
+  "autoname": "format:CAMP-{YY}-{MM}-{####}",
+  "creation": "2025-01-01 00:00:00.000000",
+  "modified": "2025-01-01 00:00:00.000000",
+  "version": 2,
+  "issingle": 0,
+  "istable": 0,
+  "engine": "InnoDB",
+  "fields": [
+    {
+      "fieldname": "camp_id",
+      "label": "Camp ID",
+      "fieldtype": "Data",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "camp_info",
+      "label": "Camp Information",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "camp_title",
+      "label": "Camp Title",
+      "fieldtype": "Data",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "organizer",
+      "label": "Organizer/Sponsor",
+      "fieldtype": "Data",
+      "reqd": 1
+    },
+    {
+      "fieldname": "branch",
+      "label": "Responsible Branch",
+      "fieldtype": "Link",
+      "options": "Blood Bank Branch",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "column_break_1",
+      "label": "",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "start_date",
+      "label": "Start Date",
+      "fieldtype": "Date",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "end_date",
+      "label": "End Date",
+      "fieldtype": "Date",
+      "reqd": 1
+    },
+    {
+      "fieldname": "status",
+      "label": "Status",
+      "fieldtype": "Select",
+      "options": "Planned\nOpen for Registration\nIn Progress\nCompleted\nCancelled",
+      "default": "Planned",
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "location_info",
+      "label": "Location Details",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "address",
+      "label": "Address",
+      "fieldtype": "Small Text"
+    },
+    {
+      "fieldname": "city",
+      "label": "City",
+      "fieldtype": "Data",
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "resources_section",
+      "label": "Staff & Equipment",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "staff_list",
+      "label": "Staff Assigned",
+      "fieldtype": "Table",
+      "options": "Camp Staff"
+    },
+    {
+      "fieldname": "equipment_list",
+      "label": "Equipment Assigned",
+      "fieldtype": "Table",
+      "options": "Camp Equipment"
+    },
+    {
+      "fieldname": "stats_section",
+      "label": "Camp Statistics",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "expected_donors",
+      "label": "Expected Donors",
+      "fieldtype": "Int"
+    },
+    {
+      "fieldname": "actual_donors",
+      "label": "Actual Donors",
+      "fieldtype": "Int",
+      "read_only": 1
+    },
+    {
+      "fieldname": "total_volume_collected",
+      "label": "Total Volume Collected (mL)",
+      "fieldtype": "Float",
+      "read_only": 1
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    },
+    {
+      "role": "Blood Donor Coordinator",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0
+    },
+    {
+      "role": "Blood Bank Manager",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0
+    }
+  ],
+  "sort_field": "start_date",
+  "sort_order": "DESC",
+  "naming_rule": "Expression",
+  "title_field": "camp_title"
+}

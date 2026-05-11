@@ -1,0 +1,158 @@
+{
+  "doctype": "DocType",
+  "name": "Blood Issue",
+  "module": "Bloodbank",
+  "autoname": "format:ISS-{YY}-{MM}-{####}",
+  "creation": "2025-01-01 00:00:00.000000",
+  "modified": "2025-01-01 00:00:00.000000",
+  "version": 2,
+  "issingle": 0,
+  "istable": 0,
+  "engine": "InnoDB",
+  "is_submittable": 1,
+  "fields": [
+    {
+      "fieldname": "issue_id",
+      "label": "Issue ID",
+      "fieldtype": "Data",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "issue_info",
+      "label": "Issue Information",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "issue_date",
+      "label": "Issue Date",
+      "fieldtype": "Date",
+      "default": "Today",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "issue_time",
+      "label": "Issue Time",
+      "fieldtype": "Time",
+      "default": "Now",
+      "reqd": 1
+    },
+    {
+      "fieldname": "blood_request",
+      "label": "Blood Request",
+      "fieldtype": "Link",
+      "options": "Blood Request",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "column_break_1",
+      "label": "",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "healthcare_institution",
+      "label": "Healthcare Institution",
+      "fieldtype": "Link",
+      "options": "Healthcare Institution",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "patient_name",
+      "label": "Patient Name",
+      "fieldtype": "Data",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "issued_by",
+      "label": "Issued By",
+      "fieldtype": "Link",
+      "options": "User",
+      "default": "Session User",
+      "reqd": 1
+    },
+    {
+      "fieldname": "items_section",
+      "label": "Units Issued",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "issued_units",
+      "label": "Issued Units",
+      "fieldtype": "Table",
+      "options": "Blood Issue Item",
+      "reqd": 1
+    },
+    {
+      "fieldname": "totals_section",
+      "label": "Billing Summary",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "total_amount",
+      "label": "Total Amount",
+      "fieldtype": "Currency",
+      "read_only": 1,
+      "default": 0
+    },
+    {
+      "fieldname": "payment_status",
+      "label": "Payment Status",
+      "fieldtype": "Select",
+      "options": "Unpaid\nPartially Paid\nPaid\nWaived",
+      "default": "Unpaid"
+    },
+    {
+      "fieldname": "delivery_info",
+      "label": "Delivery Details",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "received_by",
+      "label": "Received By (Name)",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "receiver_designation",
+      "label": "Receiver Designation",
+      "fieldtype": "Data"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 1,
+      "cancel": 1
+    },
+    {
+      "role": "Blood Bank Manager",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "submit": 1,
+      "cancel": 1
+    },
+    {
+      "role": "Blood Bank Technician",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "submit": 1,
+      "cancel": 0
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "naming_rule": "Expression",
+  "title_field": "issue_id"
+}

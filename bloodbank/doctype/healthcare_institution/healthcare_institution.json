@@ -1,0 +1,95 @@
+{
+  "doctype": "DocType",
+  "name": "Healthcare Institution",
+  "module": "Bloodbank",
+  "autoname": "field:institution_name",
+  "creation": "2025-01-01 00:00:00.000000",
+  "modified": "2025-01-01 00:00:00.000000",
+  "version": 2,
+  "issingle": 0,
+  "istable": 0,
+  "engine": "InnoDB",
+  "fields": [
+    {
+      "fieldname": "institution_name",
+      "label": "Institution Name",
+      "fieldtype": "Data",
+      "reqd": 1,
+      "unique": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "institution_type",
+      "label": "Institution Type",
+      "fieldtype": "Select",
+      "options": "Public Hospital\nPrivate Hospital\nClinic\nLaboratory\nResearch Center",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "contact_info",
+      "label": "Contact Information",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "phone",
+      "label": "Phone",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "email",
+      "label": "Email",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "address",
+      "label": "Address",
+      "fieldtype": "Small Text"
+    },
+    {
+      "fieldname": "billing_info",
+      "label": "Billing Information",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "outstanding_balance",
+      "label": "Outstanding Balance",
+      "fieldtype": "Currency",
+      "read_only": 1,
+      "default": 0
+    },
+    {
+      "fieldname": "credit_limit",
+      "label": "Credit Limit",
+      "fieldtype": "Currency",
+      "default": 10000
+    },
+    {
+      "fieldname": "is_active",
+      "label": "Is Active",
+      "fieldtype": "Check",
+      "default": 1
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    },
+    {
+      "role": "Blood Bank Manager",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "title_field": "institution_name"
+}

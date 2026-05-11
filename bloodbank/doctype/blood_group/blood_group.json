@@ -1,0 +1,82 @@
+{
+  "doctype": "DocType",
+  "name": "Blood Group",
+  "module": "Bloodbank",
+  "autoname": "field:full_group",
+  "creation": "2025-01-01 00:00:00.000000",
+  "modified": "2025-01-01 00:00:00.000000",
+  "version": 2,
+  "issingle": 0,
+  "istable": 0,
+  "engine": "InnoDB",
+  "fields": [
+    {
+      "fieldname": "blood_group",
+      "label": "Blood Group",
+      "fieldtype": "Select",
+      "options": "A\nB\nAB\nO",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "rh_factor",
+      "label": "Rh Factor",
+      "fieldtype": "Select",
+      "options": "Positive\nNegative",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "full_group",
+      "label": "Full Group Name",
+      "fieldtype": "Data",
+      "read_only": 1,
+      "unique": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "is_active",
+      "label": "Is Active",
+      "fieldtype": "Check",
+      "default": 1
+    },
+    {
+      "fieldname": "section_compatibility",
+      "label": "Compatibility",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "can_receive_from",
+      "label": "Can Receive From",
+      "fieldtype": "Table",
+      "options": "Compatible Blood Group"
+    },
+    {
+      "fieldname": "can_donate_to",
+      "label": "Can Donate To",
+      "fieldtype": "Table",
+      "options": "Compatible Blood Group"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    },
+    {
+      "role": "Blood Bank Manager",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "title_field": "full_group"
+}

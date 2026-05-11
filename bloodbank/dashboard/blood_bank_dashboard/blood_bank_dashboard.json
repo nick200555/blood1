@@ -1,0 +1,20 @@
+{
+  "doctype": "Dashboard",
+  "name": "Blood Bank Dashboard",
+  "dashboard_name": "Blood Bank Dashboard",
+  "is_default": 0,
+  "charts": [
+    {
+      "chart": "Blood Stock by Group"
+    },
+    {
+      "chart": "Monthly Donations"
+    },
+    {
+      "chart": "Blood Requests Trend"
+    },
+    {
+      "chart": "Donor Registrations"
+    }
+  ]
+}

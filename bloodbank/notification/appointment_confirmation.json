@@ -1,0 +1,16 @@
+{
+  "doctype": "Notification",
+  "name": "Appointment Confirmation",
+  "document_type": "Donor Appointment",
+  "event": "Value Change",
+  "value_changed": "status",
+  "channel": "Email",
+  "subject": "Blood Donation Appointment Confirmed - {{ doc.appointment_date }}",
+  "message": "<p>Dear {{ doc.donor_name }},</p><p>Your appointment is confirmed for {{ doc.appointment_date }} at {{ doc.appointment_time }}.</p><p>Location: {{ doc.donation_site }}</p><p>Type: {{ doc.appointment_type }}</p>",
+  "condition": "doc.status == 'Confirmed'",
+  "recipients": [
+    {
+      "receiver_by_document_field": "email"
+    }
+  ]
+}

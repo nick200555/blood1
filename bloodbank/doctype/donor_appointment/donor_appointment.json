@@ -1,0 +1,136 @@
+{
+  "doctype": "DocType",
+  "name": "Donor Appointment",
+  "module": "Bloodbank",
+  "autoname": "format:APT-{YY}-{MM}-{####}",
+  "creation": "2025-01-01 00:00:00.000000",
+  "modified": "2025-01-01 00:00:00.000000",
+  "version": 2,
+  "issingle": 0,
+  "istable": 0,
+  "engine": "InnoDB",
+  "fields": [
+    {
+      "fieldname": "appointment_id",
+      "label": "Appointment ID",
+      "fieldtype": "Data",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "donor_info",
+      "label": "Donor Information",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "donor",
+      "label": "Donor",
+      "fieldtype": "Link",
+      "options": "Donor",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "donor_name",
+      "label": "Donor Name",
+      "fieldtype": "Data",
+      "fetch_from": "donor.full_name",
+      "read_only": 1
+    },
+    {
+      "fieldname": "blood_group",
+      "label": "Blood Group",
+      "fieldtype": "Link",
+      "options": "Blood Group",
+      "fetch_from": "donor.blood_group",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "column_break_1",
+      "label": "",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "appointment_date",
+      "label": "Appointment Date",
+      "fieldtype": "Date",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "appointment_time",
+      "label": "Appointment Time",
+      "fieldtype": "Time",
+      "reqd": 1
+    },
+    {
+      "fieldname": "appointment_type",
+      "label": "Appointment Type",
+      "fieldtype": "Select",
+      "options": "Whole Blood\nApheresis\nCamp\nDirected",
+      "default": "Whole Blood",
+      "reqd": 1
+    },
+    {
+      "fieldname": "site_info",
+      "label": "Site & Status",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "donation_site",
+      "label": "Donation Site",
+      "fieldtype": "Link",
+      "options": "Donation Site",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "status",
+      "label": "Status",
+      "fieldtype": "Select",
+      "options": "Scheduled\nConfirmed\nChecked In\nCompleted\nNo Show\nCancelled",
+      "default": "Scheduled",
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "notes",
+      "label": "Notes",
+      "fieldtype": "Small Text"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    },
+    {
+      "role": "Blood Bank Receptionist",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0
+    },
+    {
+      "role": "Blood Donor Coordinator",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "naming_rule": "Expression",
+  "title_field": "donor_name"
+}

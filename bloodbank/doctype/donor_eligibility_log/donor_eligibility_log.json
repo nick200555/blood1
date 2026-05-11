@@ -1,0 +1,92 @@
+{
+  "doctype": "DocType",
+  "name": "Donor Eligibility Log",
+  "module": "Bloodbank",
+  "autoname": "format:LOG-{YY}-{####}",
+  "creation": "2025-01-01 00:00:00.000000",
+  "modified": "2025-01-01 00:00:00.000000",
+  "version": 2,
+  "issingle": 0,
+  "istable": 0,
+  "engine": "InnoDB",
+  "fields": [
+    {
+      "fieldname": "log_id",
+      "label": "Log ID",
+      "fieldtype": "Data",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "donor",
+      "label": "Donor",
+      "fieldtype": "Link",
+      "options": "Donor",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "action_date",
+      "label": "Action Date",
+      "fieldtype": "Datetime",
+      "default": "Now",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "action",
+      "label": "Action",
+      "fieldtype": "Select",
+      "options": "Deferred\nReactivated\nBlacklisted\nStatus Check",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "reason",
+      "label": "Reason",
+      "fieldtype": "Link",
+      "options": "Deferral Reason"
+    },
+    {
+      "fieldname": "screening",
+      "label": "Screening Reference",
+      "fieldtype": "Link",
+      "options": "Donor Health Screening"
+    },
+    {
+      "fieldname": "deferral_end_date",
+      "label": "Deferral End Date",
+      "fieldtype": "Date",
+      "read_only": 1
+    },
+    {
+      "fieldname": "performed_by",
+      "label": "Performed By",
+      "fieldtype": "Link",
+      "options": "User",
+      "default": "Session User"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    },
+    {
+      "role": "Blood Bank Manager",
+      "permlevel": 0,
+      "read": 1,
+      "write": 0,
+      "create": 1,
+      "delete": 0
+    }
+  ],
+  "sort_field": "action_date",
+  "sort_order": "DESC",
+  "naming_rule": "Expression",
+  "title_field": "donor"
+}

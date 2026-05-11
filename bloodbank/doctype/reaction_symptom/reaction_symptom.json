@@ -1,0 +1,27 @@
+{
+  "doctype": "DocType",
+  "name": "Reaction Symptom",
+  "module": "Bloodbank",
+  "istable": 1,
+  "fields": [
+    {
+      "fieldname": "symptom",
+      "label": "Symptom",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "severity",
+      "label": "Severity",
+      "fieldtype": "Select",
+      "options": "Mild\nModerate\nSevere",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "onset_time",
+      "label": "Onset Time",
+      "fieldtype": "Time"
+    }
+  ]
+}

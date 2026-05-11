@@ -1,0 +1,16 @@
+{
+  "doctype": "Notification",
+  "name": "Appointment Reminder",
+  "document_type": "Donor Appointment",
+  "event": "Days Before",
+  "days_in_advance": 1,
+  "channel": "Email",
+  "subject": "Reminder: Blood Donation Appointment Tomorrow",
+  "message": "<p>Dear {{ doc.donor_name }},</p><p>This is a reminder for your blood donation appointment tomorrow ({{ doc.appointment_date }}) at {{ doc.appointment_time }}.</p><p>Location: {{ doc.donation_site }}</p><p>Please bring a valid ID and stay hydrated.</p>",
+  "condition": "doc.status in ['Confirmed', 'Scheduled']",
+  "recipients": [
+    {
+      "receiver_by_document_field": "email"
+    }
+  ]
+}

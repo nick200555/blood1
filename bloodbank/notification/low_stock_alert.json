@@ -1,0 +1,16 @@
+{
+  "doctype": "Notification",
+  "name": "Low Stock Alert",
+  "document_type": "Blood Inventory",
+  "event": "Value Change",
+  "value_changed": "stock_status",
+  "channel": "Email",
+  "subject": "URGENT: Blood Stock {{ doc.stock_status }} - {{ doc.blood_group }} {{ doc.component_type }}",
+  "message": "<p>Blood stock alert at {{ doc.branch }}:</p><p><b>{{ doc.blood_group }} {{ doc.component_type }}</b> is now <b>{{ doc.stock_status }}</b></p><p>Available Units: {{ doc.available_units }}</p><p>Minimum Required: {{ doc.minimum_stock }}</p>",
+  "condition": "doc.stock_status in ['Low', 'Critical']",
+  "recipients": [
+    {
+      "receiver_by_role": "Blood Bank Manager"
+    }
+  ]
+}

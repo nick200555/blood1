@@ -1,0 +1,193 @@
+{
+  "doctype": "Workspace",
+  "name": "Blood Bank",
+  "label": "Blood Bank",
+  "title": "Blood Bank",
+  "for_user": "",
+  "icon": "heart",
+  "module": "Bloodbank",
+  "hide_custom": 0,
+  "links": [
+    {
+      "label": "Donor Management",
+      "type": "Card Break",
+      "icon": "users"
+    },
+    {
+      "label": "Donors",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Donor"
+    },
+    {
+      "label": "Donor Appointments",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Donor Appointment"
+    },
+    {
+      "label": "Health Screenings",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Donor Health Screening"
+    },
+    {
+      "label": "Blood Collection",
+      "type": "Card Break",
+      "icon": "droplet"
+    },
+    {
+      "label": "Blood Collections",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Blood Collection"
+    },
+    {
+      "label": "Blood Units",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Blood Unit"
+    },
+    {
+      "label": "Blood Components",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Blood Component"
+    },
+    {
+      "label": "Blood Test Results",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Blood Test Result"
+    },
+    {
+      "label": "Inventory & Requests",
+      "type": "Card Break",
+      "icon": "package"
+    },
+    {
+      "label": "Blood Inventory",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Blood Inventory"
+    },
+    {
+      "label": "Blood Requests",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Blood Request"
+    },
+    {
+      "label": "Blood Issues",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Blood Issue"
+    },
+    {
+      "label": "Patients & Transfusions",
+      "type": "Card Break",
+      "icon": "activity"
+    },
+    {
+      "label": "Patients",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Patient"
+    },
+    {
+      "label": "Transfusions",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Transfusion"
+    },
+    {
+      "label": "Adverse Reactions",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Adverse Reaction"
+    },
+    {
+      "label": "Camps & Drives",
+      "type": "Card Break",
+      "icon": "map-pin"
+    },
+    {
+      "label": "Blood Camps",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Blood Camp"
+    },
+    {
+      "label": "Camp Registrations",
+      "type": "Link",
+      "link_type": "DocType",
+      "link_to": "Camp Registration"
+    },
+    {
+      "label": "Reports",
+      "type": "Card Break",
+      "icon": "file-text"
+    },
+    {
+      "label": "Blood Stock Report",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Blood Stock Report"
+    },
+    {
+      "label": "Donor Analytics",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Donor Analytics"
+    },
+    {
+      "label": "Blood Issue Register",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Blood Issue Register"
+    },
+    {
+      "label": "Expiry Alert Report",
+      "type": "Link",
+      "link_type": "Report",
+      "link_to": "Expiry Alert Report"
+    }
+  ],
+  "shortcuts": [
+    {
+      "label": "Donors",
+      "link_to": "Donor",
+      "type": "DocType",
+      "stats_filter": "{\"donor_status\": \"Active\"}"
+    },
+    {
+      "label": "Blood Collections",
+      "link_to": "Blood Collection",
+      "type": "DocType",
+      "stats_filter": "{\"docstatus\": 1}"
+    },
+    {
+      "label": "Blood Requests",
+      "link_to": "Blood Request",
+      "type": "DocType",
+      "stats_filter": "{\"status\": \"Submitted\"}"
+    },
+    {
+      "label": "Blood Inventory",
+      "link_to": "Blood Inventory",
+      "type": "DocType"
+    }
+  ],
+  "charts": [
+    {
+      "label": "Blood Stock by Group",
+      "chart_name": "Blood Stock by Group",
+      "chart_type": "Dashboard Chart"
+    },
+    {
+      "label": "Monthly Donations",
+      "chart_name": "Monthly Donations",
+      "chart_type": "Dashboard Chart"
+    }
+  ]
+}

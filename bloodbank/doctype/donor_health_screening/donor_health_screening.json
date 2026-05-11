@@ -1,0 +1,205 @@
+{
+  "doctype": "DocType",
+  "name": "Donor Health Screening",
+  "module": "Bloodbank",
+  "autoname": "format:SCR-{YY}-{####}",
+  "creation": "2025-01-01 00:00:00.000000",
+  "modified": "2025-01-01 00:00:00.000000",
+  "version": 2,
+  "issingle": 0,
+  "istable": 0,
+  "engine": "InnoDB",
+  "is_submittable": 1,
+  "fields": [
+    {
+      "fieldname": "screening_id",
+      "label": "Screening ID",
+      "fieldtype": "Data",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "donor_info",
+      "label": "Donor Information",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "donor",
+      "label": "Donor",
+      "fieldtype": "Link",
+      "options": "Donor",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "donor_name",
+      "label": "Donor Name",
+      "fieldtype": "Data",
+      "fetch_from": "donor.full_name",
+      "read_only": 1
+    },
+    {
+      "fieldname": "screening_date",
+      "label": "Screening Date",
+      "fieldtype": "Date",
+      "default": "Today",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "appointment",
+      "label": "Appointment",
+      "fieldtype": "Link",
+      "options": "Donor Appointment"
+    },
+    {
+      "fieldname": "vitals_section",
+      "label": "Vital Signs",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "weight_kg",
+      "label": "Weight (kg)",
+      "fieldtype": "Float",
+      "reqd": 1
+    },
+    {
+      "fieldname": "height_cm",
+      "label": "Height (cm)",
+      "fieldtype": "Float"
+    },
+    {
+      "fieldname": "bmi",
+      "label": "BMI",
+      "fieldtype": "Float",
+      "read_only": 1
+    },
+    {
+      "fieldname": "column_break_vitals",
+      "label": "",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "blood_pressure_systolic",
+      "label": "BP Systolic (mmHg)",
+      "fieldtype": "Int",
+      "reqd": 1
+    },
+    {
+      "fieldname": "blood_pressure_diastolic",
+      "label": "BP Diastolic (mmHg)",
+      "fieldtype": "Int",
+      "reqd": 1
+    },
+    {
+      "fieldname": "pulse_rate",
+      "label": "Pulse Rate (bpm)",
+      "fieldtype": "Int",
+      "reqd": 1
+    },
+    {
+      "fieldname": "temperature_c",
+      "label": "Temperature (\u00b0C)",
+      "fieldtype": "Float",
+      "reqd": 1
+    },
+    {
+      "fieldname": "screening_section",
+      "label": "Medical Screening",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "hemoglobin_level",
+      "label": "Hemoglobin (g/dL)",
+      "fieldtype": "Float",
+      "reqd": 1
+    },
+    {
+      "fieldname": "general_health_ok",
+      "label": "General Health is OK?",
+      "fieldtype": "Check",
+      "default": 1
+    },
+    {
+      "fieldname": "questionnaire_completed",
+      "label": "Questionnaire Completed?",
+      "fieldtype": "Check",
+      "default": 1
+    },
+    {
+      "fieldname": "outcome_section",
+      "label": "Eligibility Outcome",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "is_eligible",
+      "label": "Is Eligible to Donate?",
+      "fieldtype": "Check",
+      "default": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "deferral_reason",
+      "label": "Deferral Reason",
+      "fieldtype": "Link",
+      "options": "Deferral Reason",
+      "depends_on": "eval:doc.is_eligible==0"
+    },
+    {
+      "fieldname": "deferral_period_days",
+      "label": "Deferral Period (Days)",
+      "fieldtype": "Int",
+      "fetch_from": "deferral_reason.deferral_period_days",
+      "depends_on": "eval:doc.is_eligible==0"
+    },
+    {
+      "fieldname": "notes",
+      "label": "Screening Notes",
+      "fieldtype": "Text"
+    },
+    {
+      "fieldname": "screener",
+      "label": "Screener",
+      "fieldtype": "Link",
+      "options": "User",
+      "default": "Session User",
+      "reqd": 1
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 1,
+      "cancel": 1
+    },
+    {
+      "role": "Blood Bank Technician",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "submit": 1,
+      "cancel": 0
+    },
+    {
+      "role": "Blood Bank Manager",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "submit": 1,
+      "cancel": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "naming_rule": "Expression",
+  "title_field": "donor_name"
+}

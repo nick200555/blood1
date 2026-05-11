@@ -1,0 +1,33 @@
+{
+  "doctype": "DocType",
+  "name": "Inventory Blood Unit",
+  "module": "Bloodbank",
+  "istable": 1,
+  "fields": [
+    {
+      "fieldname": "blood_unit",
+      "label": "Blood Unit",
+      "fieldtype": "Link",
+      "options": "Blood Unit",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "status",
+      "label": "Status",
+      "fieldtype": "Data",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "expiry_date",
+      "label": "Expiry Date",
+      "fieldtype": "Date",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "volume",
+      "label": "Volume (mL)",
+      "fieldtype": "Float",
+      "in_list_view": 1
+    }
+  ]
+}

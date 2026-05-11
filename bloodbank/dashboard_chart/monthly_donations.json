@@ -1,0 +1,11 @@
+{
+  "doctype": "Dashboard Chart",
+  "chart_name": "Monthly Donations",
+  "chart_type": "Line",
+  "document_type": "Blood Collection",
+  "group_by_type": "Count",
+  "time_interval": "Monthly",
+  "based_on": "collection_date",
+  "filters_json": "[[\"Blood Collection\",\"docstatus\",\"=\",\"1\",false]]",
+  "is_public": 1
+}

@@ -1,0 +1,250 @@
+{
+  "doctype": "DocType",
+  "name": "Donor",
+  "module": "Bloodbank",
+  "autoname": "format:DN-{YY}-{####}",
+  "creation": "2025-01-01 00:00:00.000000",
+  "modified": "2025-01-01 00:00:00.000000",
+  "version": 2,
+  "issingle": 0,
+  "istable": 0,
+  "engine": "InnoDB",
+  "track_changes": 1,
+  "fields": [
+    {
+      "fieldname": "donor_id",
+      "label": "Donor ID",
+      "fieldtype": "Data",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "personal_info",
+      "label": "Personal Information",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "first_name",
+      "label": "First Name",
+      "fieldtype": "Data",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "last_name",
+      "label": "Last Name",
+      "fieldtype": "Data",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "full_name",
+      "label": "Full Name",
+      "fieldtype": "Data",
+      "read_only": 1,
+      "in_global_search": 1
+    },
+    {
+      "fieldname": "column_break_1",
+      "label": "",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "date_of_birth",
+      "label": "Date of Birth",
+      "fieldtype": "Date",
+      "reqd": 1
+    },
+    {
+      "fieldname": "age",
+      "label": "Age",
+      "fieldtype": "Int",
+      "read_only": 1
+    },
+    {
+      "fieldname": "gender",
+      "label": "Gender",
+      "fieldtype": "Select",
+      "options": "Male\nFemale\nOther",
+      "reqd": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "blood_group",
+      "label": "Blood Group",
+      "fieldtype": "Link",
+      "options": "Blood Group",
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "contact_info",
+      "label": "Contact Information",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "email",
+      "label": "Email",
+      "fieldtype": "Data",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "mobile",
+      "label": "Mobile",
+      "fieldtype": "Data",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "address",
+      "label": "Address",
+      "fieldtype": "Small Text"
+    },
+    {
+      "fieldname": "column_break_2",
+      "label": "",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "city",
+      "label": "City",
+      "fieldtype": "Data",
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "receive_email",
+      "label": "Receive Email Notifications",
+      "fieldtype": "Check",
+      "default": 1
+    },
+    {
+      "fieldname": "receive_sms",
+      "label": "Receive SMS Notifications",
+      "fieldtype": "Check",
+      "default": 1
+    },
+    {
+      "fieldname": "status_section",
+      "label": "Eligibility & Status",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "donor_status",
+      "label": "Donor Status",
+      "fieldtype": "Select",
+      "options": "Active\nDeferred\nBlacklisted",
+      "default": "Active",
+      "read_only": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "donor_type",
+      "label": "Donor Type",
+      "fieldtype": "Link",
+      "options": "Donor Type",
+      "reqd": 1
+    },
+    {
+      "fieldname": "is_eligible",
+      "label": "Is Eligible",
+      "fieldtype": "Check",
+      "default": 1,
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "column_break_3",
+      "label": "",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "last_donation_date",
+      "label": "Last Donation Date",
+      "fieldtype": "Date",
+      "read_only": 1
+    },
+    {
+      "fieldname": "next_eligible_date",
+      "label": "Next Eligible Date",
+      "fieldtype": "Date",
+      "read_only": 1
+    },
+    {
+      "fieldname": "total_donations",
+      "label": "Total Donations",
+      "fieldtype": "Int",
+      "default": 0,
+      "read_only": 1
+    },
+    {
+      "fieldname": "deferral_info",
+      "label": "Deferral Details",
+      "fieldtype": "Section Break",
+      "depends_on": "eval:doc.is_eligible==0"
+    },
+    {
+      "fieldname": "deferral_reason",
+      "label": "Deferral Reason",
+      "fieldtype": "Link",
+      "options": "Deferral Reason",
+      "read_only": 1
+    },
+    {
+      "fieldname": "deferral_end_date",
+      "label": "Deferral End Date",
+      "fieldtype": "Date",
+      "read_only": 1
+    },
+    {
+      "fieldname": "permanent_deferral",
+      "label": "Permanent Deferral",
+      "fieldtype": "Check",
+      "default": 0,
+      "read_only": 1
+    },
+    {
+      "fieldname": "history_tab",
+      "label": "Donation History",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "donation_history",
+      "label": "Donation History",
+      "fieldtype": "Table",
+      "options": "Donor Donation History",
+      "read_only": 1
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    },
+    {
+      "role": "Blood Bank Manager",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0
+    },
+    {
+      "role": "Blood Bank Receptionist",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "naming_rule": "Expression",
+  "title_field": "full_name",
+  "search_fields": "full_name,mobile,email"
+}

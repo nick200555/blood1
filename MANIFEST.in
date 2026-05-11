@@ -1,0 +1,5 @@
+include MANIFEST.in
+include requirements.txt
+include README.md
+include license.txt
+recursive-include bloodbank *.json *.py *.md *.txt *.css *.js *.html

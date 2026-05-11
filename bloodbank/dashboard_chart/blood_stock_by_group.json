@@ -1,0 +1,11 @@
+{
+  "doctype": "Dashboard Chart",
+  "chart_name": "Blood Stock by Group",
+  "chart_type": "Bar",
+  "document_type": "Blood Unit",
+  "group_by_type": "Count",
+  "group_by_based_on": "blood_group",
+  "filters_json": "[[\"Blood Unit\",\"status\",\"in\",[\"Available\",\"Reserved\"],false]]",
+  "is_public": 1,
+  "y_axis": ""
+}

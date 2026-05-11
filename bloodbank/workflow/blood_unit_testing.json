@@ -1,0 +1,52 @@
+{
+  "doctype": "Workflow",
+  "workflow_name": "Blood Unit Testing",
+  "document_type": "Blood Unit",
+  "is_active": 1,
+  "states": [
+    {
+      "state": "Quarantined",
+      "doc_status": 0,
+      "allow_edit": "Blood Bank Technician"
+    },
+    {
+      "state": "Testing",
+      "doc_status": 0,
+      "allow_edit": "Blood Bank Technician"
+    },
+    {
+      "state": "Available",
+      "doc_status": 0,
+      "allow_edit": "Blood Bank Manager",
+      "is_terminal": 0
+    },
+    {
+      "state": "Discarded",
+      "doc_status": 0,
+      "allow_edit": "Blood Bank Manager",
+      "is_terminal": 1
+    }
+  ],
+  "transitions": [
+    {
+      "state": "Quarantined",
+      "action": "Start Testing",
+      "next_state": "Testing",
+      "allowed": "Blood Bank Technician"
+    },
+    {
+      "state": "Testing",
+      "action": "Approve Unit",
+      "next_state": "Available",
+      "allowed": "Blood Bank Manager",
+      "condition": "doc.status == 'Available'"
+    },
+    {
+      "state": "Testing",
+      "action": "Reject Unit",
+      "next_state": "Discarded",
+      "allowed": "Blood Bank Manager",
+      "condition": "doc.status == 'Discarded'"
+    }
+  ]
+}

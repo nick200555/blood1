@@ -1,0 +1,170 @@
+{
+  "doctype": "DocType",
+  "name": "Blood Unit",
+  "module": "Bloodbank",
+  "autoname": "format:UNIT-{YY}-{####}",
+  "creation": "2025-01-01 00:00:00.000000",
+  "modified": "2025-01-01 00:00:00.000000",
+  "version": 2,
+  "issingle": 0,
+  "istable": 0,
+  "engine": "InnoDB",
+  "track_changes": 1,
+  "fields": [
+    {
+      "fieldname": "unit_id",
+      "label": "Unit ID",
+      "fieldtype": "Data",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "unit_info",
+      "label": "Unit Information",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "blood_collection",
+      "label": "Blood Collection",
+      "fieldtype": "Link",
+      "options": "Blood Collection",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "donor",
+      "label": "Donor",
+      "fieldtype": "Link",
+      "options": "Donor",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "blood_bag_number",
+      "label": "Blood Bag Number",
+      "fieldtype": "Data",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "column_break_1",
+      "label": "",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "blood_group",
+      "label": "Blood Group",
+      "fieldtype": "Link",
+      "options": "Blood Group",
+      "read_only": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "component_type",
+      "label": "Component Type",
+      "fieldtype": "Link",
+      "options": "Blood Component Type",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "volume_ml",
+      "label": "Volume (mL)",
+      "fieldtype": "Float",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "dates_section",
+      "label": "Storage & Expiry",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "collection_date",
+      "label": "Collection Date",
+      "fieldtype": "Date",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "expiry_date",
+      "label": "Expiry Date",
+      "fieldtype": "Date",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "column_break_2",
+      "label": "",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "current_branch",
+      "label": "Current Branch",
+      "fieldtype": "Link",
+      "options": "Blood Bank Branch",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "status",
+      "label": "Status",
+      "fieldtype": "Select",
+      "options": "Quarantined\nAvailable\nReserved\nIssued\nExpired\nDiscarded",
+      "default": "Quarantined",
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "test_section",
+      "label": "Test Results",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "test_results",
+      "label": "Test Results",
+      "fieldtype": "Table",
+      "options": "Blood Unit Test Result",
+      "read_only": 1
+    },
+    {
+      "fieldname": "notes",
+      "label": "Notes",
+      "fieldtype": "Text"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    },
+    {
+      "role": "Blood Bank Manager",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0
+    },
+    {
+      "role": "Blood Bank Technician",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "naming_rule": "Expression",
+  "title_field": "blood_bag_number",
+  "search_fields": "blood_bag_number,blood_group,donor"
+}

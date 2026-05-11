@@ -1,0 +1,130 @@
+{
+  "doctype": "DocType",
+  "name": "Adverse Reaction",
+  "module": "Bloodbank",
+  "autoname": "format:REA-{YY}-{####}",
+  "creation": "2025-01-01 00:00:00.000000",
+  "modified": "2025-01-01 00:00:00.000000",
+  "version": 2,
+  "issingle": 0,
+  "istable": 0,
+  "engine": "InnoDB",
+  "is_submittable": 1,
+  "fields": [
+    {
+      "fieldname": "reaction_id",
+      "label": "Reaction ID",
+      "fieldtype": "Data",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "basic_info",
+      "label": "Reaction Information",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "reaction_date",
+      "label": "Reaction Date",
+      "fieldtype": "Date",
+      "default": "Today",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "patient",
+      "label": "Patient",
+      "fieldtype": "Link",
+      "options": "Patient",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "transfusion",
+      "label": "Transfusion Record",
+      "fieldtype": "Link",
+      "options": "Transfusion",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "column_break_1",
+      "label": "",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "reaction_type",
+      "label": "Reaction Type",
+      "fieldtype": "Link",
+      "options": "Adverse Reaction Type",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "severity",
+      "label": "Severity",
+      "fieldtype": "Select",
+      "options": "Mild\nModerate\nSevere\nLife-threatening\nFatal",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "clinical_section",
+      "label": "Clinical Presentation",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "symptoms",
+      "label": "Symptoms",
+      "fieldtype": "Table",
+      "options": "Reaction Symptom"
+    },
+    {
+      "fieldname": "management_notes",
+      "label": "Management & Treatment",
+      "fieldtype": "Small Text"
+    },
+    {
+      "fieldname": "outcome",
+      "label": "Outcome",
+      "fieldtype": "Select",
+      "options": "Fully Recovered\nRecovered with Sequelae\nNot Recovered\nFatal\nUnknown"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 1,
+      "cancel": 1
+    },
+    {
+      "role": "Blood Bank Manager",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "submit": 1,
+      "cancel": 1
+    },
+    {
+      "role": "Hemovigilance Officer",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "submit": 1,
+      "cancel": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "naming_rule": "Expression",
+  "title_field": "reaction_id"
+}

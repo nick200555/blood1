@@ -1,0 +1,121 @@
+{
+  "doctype": "DocType",
+  "name": "Transfusion",
+  "module": "Bloodbank",
+  "autoname": "format:TRF-{YY}-{####}",
+  "creation": "2025-01-01 00:00:00.000000",
+  "modified": "2025-01-01 00:00:00.000000",
+  "version": 2,
+  "issingle": 0,
+  "istable": 0,
+  "engine": "InnoDB",
+  "is_submittable": 1,
+  "fields": [
+    {
+      "fieldname": "transfusion_id",
+      "label": "Transfusion ID",
+      "fieldtype": "Data",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "transfusion_info",
+      "label": "Transfusion Information",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "transfusion_date",
+      "label": "Transfusion Date",
+      "fieldtype": "Date",
+      "default": "Today",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "patient",
+      "label": "Patient",
+      "fieldtype": "Link",
+      "options": "Patient",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "blood_unit",
+      "label": "Blood Unit",
+      "fieldtype": "Link",
+      "options": "Blood Unit",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "column_break_1",
+      "label": "",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "transfused_by",
+      "label": "Transfused By",
+      "fieldtype": "Data",
+      "reqd": 1
+    },
+    {
+      "fieldname": "supervised_by",
+      "label": "Supervised By",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "reaction_info",
+      "label": "Adverse Reactions",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "had_reaction",
+      "label": "Had Adverse Reaction",
+      "fieldtype": "Check",
+      "default": 0
+    },
+    {
+      "fieldname": "reaction_details",
+      "label": "Reaction Record",
+      "fieldtype": "Link",
+      "options": "Adverse Reaction",
+      "read_only": 1
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 1,
+      "cancel": 1
+    },
+    {
+      "role": "Blood Bank Manager",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "submit": 1,
+      "cancel": 1
+    },
+    {
+      "role": "Hemovigilance Officer",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "submit": 1,
+      "cancel": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "naming_rule": "Expression",
+  "title_field": "transfusion_id"
+}

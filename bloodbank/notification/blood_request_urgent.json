@@ -1,0 +1,18 @@
+{
+  "doctype": "Notification",
+  "name": "Urgent Blood Request",
+  "document_type": "Blood Request",
+  "event": "New",
+  "channel": "Email",
+  "subject": "URGENT: {{ doc.request_type }} Blood Request - {{ doc.blood_group }}",
+  "message": "<p>Urgent blood request received:</p><p>Request Type: {{ doc.request_type }}</p><p>Blood Group: {{ doc.blood_group }}</p><p>Component: {{ doc.component_type }}</p><p>Units Required: {{ doc.units_required }}</p><p>Required By: {{ doc.required_by }}</p><p>Institution: {{ doc.healthcare_institution }}</p>",
+  "condition": "doc.request_type in ['Urgent', 'Emergency']",
+  "recipients": [
+    {
+      "receiver_by_role": "Blood Bank Manager"
+    },
+    {
+      "receiver_by_role": "Blood Bank Technician"
+    }
+  ]
+}

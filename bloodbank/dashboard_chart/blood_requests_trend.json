@@ -1,0 +1,11 @@
+{
+  "doctype": "Dashboard Chart",
+  "chart_name": "Blood Requests Trend",
+  "chart_type": "Line",
+  "document_type": "Blood Request",
+  "group_by_type": "Count",
+  "time_interval": "Monthly",
+  "based_on": "request_date",
+  "filters_json": "[[\"Blood Request\",\"docstatus\",\"=\",\"1\",false]]",
+  "is_public": 1
+}
