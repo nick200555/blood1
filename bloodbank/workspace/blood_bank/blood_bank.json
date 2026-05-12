@@ -1,193 +1,337 @@
 {
-  "doctype": "Workspace",
-  "name": "Blood Bank",
-  "label": "Blood Bank",
-  "title": "Blood Bank",
-  "for_user": "",
-  "icon": "heart",
-  "module": "Bloodbank",
-  "hide_custom": 0,
-  "links": [
-    {
-      "label": "Donor Management",
-      "type": "Card Break",
-      "icon": "users"
-    },
-    {
-      "label": "Donors",
-      "type": "Link",
-      "link_type": "DocType",
-      "link_to": "Donor"
-    },
-    {
-      "label": "Donor Appointments",
-      "type": "Link",
-      "link_type": "DocType",
-      "link_to": "Donor Appointment"
-    },
-    {
-      "label": "Health Screenings",
-      "type": "Link",
-      "link_type": "DocType",
-      "link_to": "Donor Health Screening"
-    },
-    {
-      "label": "Blood Collection",
-      "type": "Card Break",
-      "icon": "droplet"
-    },
-    {
-      "label": "Blood Collections",
-      "type": "Link",
-      "link_type": "DocType",
-      "link_to": "Blood Collection"
-    },
-    {
-      "label": "Blood Units",
-      "type": "Link",
-      "link_type": "DocType",
-      "link_to": "Blood Unit"
-    },
-    {
-      "label": "Blood Components",
-      "type": "Link",
-      "link_type": "DocType",
-      "link_to": "Blood Component"
-    },
-    {
-      "label": "Blood Test Results",
-      "type": "Link",
-      "link_type": "DocType",
-      "link_to": "Blood Test Result"
-    },
-    {
-      "label": "Inventory & Requests",
-      "type": "Card Break",
-      "icon": "package"
-    },
-    {
-      "label": "Blood Inventory",
-      "type": "Link",
-      "link_type": "DocType",
-      "link_to": "Blood Inventory"
-    },
-    {
-      "label": "Blood Requests",
-      "type": "Link",
-      "link_type": "DocType",
-      "link_to": "Blood Request"
-    },
-    {
-      "label": "Blood Issues",
-      "type": "Link",
-      "link_type": "DocType",
-      "link_to": "Blood Issue"
-    },
-    {
-      "label": "Patients & Transfusions",
-      "type": "Card Break",
-      "icon": "activity"
-    },
-    {
-      "label": "Patients",
-      "type": "Link",
-      "link_type": "DocType",
-      "link_to": "Patient"
-    },
-    {
-      "label": "Transfusions",
-      "type": "Link",
-      "link_type": "DocType",
-      "link_to": "Transfusion"
-    },
-    {
-      "label": "Adverse Reactions",
-      "type": "Link",
-      "link_type": "DocType",
-      "link_to": "Adverse Reaction"
-    },
-    {
-      "label": "Camps & Drives",
-      "type": "Card Break",
-      "icon": "map-pin"
-    },
-    {
-      "label": "Blood Camps",
-      "type": "Link",
-      "link_type": "DocType",
-      "link_to": "Blood Camp"
-    },
-    {
-      "label": "Camp Registrations",
-      "type": "Link",
-      "link_type": "DocType",
-      "link_to": "Camp Registration"
-    },
-    {
-      "label": "Reports",
-      "type": "Card Break",
-      "icon": "file-text"
-    },
-    {
-      "label": "Blood Stock Report",
-      "type": "Link",
-      "link_type": "Report",
-      "link_to": "Blood Stock Report"
-    },
-    {
-      "label": "Donor Analytics",
-      "type": "Link",
-      "link_type": "Report",
-      "link_to": "Donor Analytics"
-    },
-    {
-      "label": "Blood Issue Register",
-      "type": "Link",
-      "link_type": "Report",
-      "link_to": "Blood Issue Register"
-    },
-    {
-      "label": "Expiry Alert Report",
-      "type": "Link",
-      "link_type": "Report",
-      "link_to": "Expiry Alert Report"
-    }
-  ],
-  "shortcuts": [
-    {
-      "label": "Donors",
-      "link_to": "Donor",
-      "type": "DocType",
-      "stats_filter": "{\"donor_status\": \"Active\"}"
-    },
-    {
-      "label": "Blood Collections",
-      "link_to": "Blood Collection",
-      "type": "DocType",
-      "stats_filter": "{\"docstatus\": 1}"
-    },
-    {
-      "label": "Blood Requests",
-      "link_to": "Blood Request",
-      "type": "DocType",
-      "stats_filter": "{\"status\": \"Submitted\"}"
-    },
-    {
-      "label": "Blood Inventory",
-      "link_to": "Blood Inventory",
-      "type": "DocType"
-    }
-  ],
-  "charts": [
-    {
-      "label": "Blood Stock by Group",
-      "chart_name": "Blood Stock by Group",
-      "chart_type": "Dashboard Chart"
-    },
-    {
-      "label": "Monthly Donations",
-      "chart_name": "Monthly Donations",
-      "chart_type": "Dashboard Chart"
-    }
-  ]
+ "charts": [
+  {
+   "chart_name": "Stock Levels by Blood Group",
+   "label": "Stock Levels by Blood Group"
+  },
+  {
+   "chart_name": "Monthly Donations",
+   "label": "Monthly Donations"
+  },
+  {
+   "chart_name": "Lab Test Status",
+   "label": "Lab Test Status"
+  },
+  {
+   "chart_name": "Distribution Trend",
+   "label": "Distribution Trend"
+  }
+ ],
+ "content": "[{\"id\": \"cb-donors\", \"type\": \"card\", \"data\": {\"card_name\": \"Donor Management\", \"col\": 12}}, {\"id\": \"cb-collection\", \"type\": \"card\", \"data\": {\"card_name\": \"Blood Collection\", \"col\": 12}}, {\"id\": \"cb-testing\", \"type\": \"card\", \"data\": {\"card_name\": \"Lab Testing\", \"col\": 12}}, {\"id\": \"cb-inventory\", \"type\": \"card\", \"data\": {\"card_name\": \"Inventory Management\", \"col\": 12}}, {\"id\": \"cb-distribution\", \"type\": \"card\", \"data\": {\"card_name\": \"Distribution\", \"col\": 12}}, {\"id\": \"cb-masters\", \"type\": \"card\", \"data\": {\"card_name\": \"Masters\", \"col\": 12}}, {\"id\": \"cb-reports\", \"type\": \"card\", \"data\": {\"card_name\": \"Reports & Analytics\", \"col\": 12}}]",
+ "creation": "2024-05-12 12:20:00.000000",
+ "developer_mode_only": 0,
+ "disable_user_customization": 0,
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "heart",
+ "idx": 0,
+ "is_default": 0,
+ "is_hidden": 0,
+ "label": "Blood Bank",
+ "links": [
+  {
+   "hidden": 0,
+   "idx": 1,
+   "is_query_report": 0,
+   "label": "Donor Management",
+   "link_count": 0,
+   "onboard": 1,
+   "title": "Donor Management",
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "idx": 2,
+   "is_query_report": 0,
+   "label": "Donor",
+   "link_count": 0,
+   "link_to": "Donor",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "idx": 3,
+   "is_query_report": 0,
+   "label": "Donor Appointment",
+   "link_count": 0,
+   "link_to": "Donor Appointment",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "idx": 4,
+   "is_query_report": 0,
+   "label": "Donor Health Screening",
+   "link_count": 0,
+   "link_to": "Donor Health Screening",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "idx": 5,
+   "is_query_report": 0,
+   "label": "Blood Collection",
+   "link_count": 0,
+   "onboard": 1,
+   "title": "Blood Collection",
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "idx": 6,
+   "is_query_report": 0,
+   "label": "Blood Collection",
+   "link_count": 0,
+   "link_to": "Blood Collection",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "idx": 7,
+   "is_query_report": 0,
+   "label": "Blood Bag Type",
+   "link_count": 0,
+   "link_to": "Blood Bag Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "idx": 8,
+   "is_query_report": 0,
+   "label": "Lab Testing",
+   "link_count": 0,
+   "onboard": 0,
+   "title": "Lab Testing",
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "idx": 9,
+   "is_query_report": 0,
+   "label": "Lab Test",
+   "link_count": 0,
+   "link_to": "Lab Test",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "idx": 10,
+   "is_query_report": 0,
+   "label": "Inventory Management",
+   "link_count": 0,
+   "onboard": 0,
+   "title": "Inventory Management",
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "idx": 11,
+   "is_query_report": 0,
+   "label": "Blood Unit",
+   "link_count": 0,
+   "link_to": "Blood Unit",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "idx": 12,
+   "is_query_report": 0,
+   "label": "Distribution",
+   "link_count": 0,
+   "onboard": 0,
+   "title": "Distribution",
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "idx": 13,
+   "is_query_report": 0,
+   "label": "Blood Issue",
+   "link_count": 0,
+   "link_to": "Blood Issue",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "idx": 14,
+   "is_query_report": 0,
+   "label": "Masters",
+   "link_count": 0,
+   "onboard": 0,
+   "title": "Masters",
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "idx": 15,
+   "is_query_report": 0,
+   "label": "Hospital",
+   "link_count": 0,
+   "link_to": "Hospital",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "idx": 16,
+   "is_query_report": 0,
+   "label": "Camp",
+   "link_count": 0,
+   "link_to": "Camp",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "idx": 17,
+   "is_query_report": 0,
+   "label": "Reports & Analytics",
+   "link_count": 0,
+   "onboard": 0,
+   "title": "Reports & Analytics",
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "idx": 18,
+   "is_query_report": 1,
+   "label": "Donor Registration Report",
+   "link_count": 0,
+   "link_to": "Donor Registration Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "idx": 19,
+   "is_query_report": 1,
+   "label": "Inventory Aging Report",
+   "link_count": 0,
+   "link_to": "Inventory Aging Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "idx": 20,
+   "is_query_report": 1,
+   "label": "Lab Test Results Report",
+   "link_count": 0,
+   "link_to": "Lab Test Results Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "idx": 21,
+   "is_query_report": 1,
+   "label": "Blood Issue Summary",
+   "link_count": 0,
+   "link_to": "Blood Issue Summary",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "idx": 22,
+   "is_query_report": 1,
+   "label": "Appointment Schedule",
+   "link_count": 0,
+   "link_to": "Appointment Schedule",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2024-05-12 12:20:00.000000",
+ "modified_by": "Administrator",
+ "module": "Bloodbank",
+ "name": "Blood Bank",
+ "owner": "Administrator",
+ "public": 1,
+ "restrict_to_domain": "",
+ "roles": [],
+ "sequence_id": 1.0,
+ "shortcuts": [
+  {
+   "color": "Red",
+   "format": "{} Donors",
+   "label": "Donor",
+   "link_to": "Donor",
+   "stats_filter": "{\"status\": \"Active\"}",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "format": "{} Today",
+   "label": "Donor Appointment",
+   "link_to": "Donor Appointment",
+   "stats_filter": "{\"appointment_date\": [\"=\", \"Today\"]}",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "format": "{} Available",
+   "label": "Blood Unit",
+   "link_to": "Blood Unit",
+   "stats_filter": "{\"status\": \"Available\"}",
+   "type": "DocType"
+  },
+  {
+   "color": "Orange",
+   "format": "{} Pending",
+   "label": "Lab Test",
+   "link_to": "Lab Test",
+   "stats_filter": "{\"status\": \"Pending\"}",
+   "type": "DocType"
+  },
+  {
+   "color": "Purple",
+   "format": "{} Open",
+   "label": "Blood Issue",
+   "link_to": "Blood Issue",
+   "stats_filter": "{\"status\": \"Draft\"}",
+   "type": "DocType"
+  }
+ ],
+ "title": "Blood Bank"
 }
